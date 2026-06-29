@@ -1,0 +1,50 @@
+[project]
+name = "bobs-brain-v2"
+version = "0.1.0"
+description = "BYOK, governed second brain (Bob v2) — Pydantic AI + LiteLLM, zero-Google-default, governed by the IEP attestation kernel."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "Intent Solutions Proprietary" }
+authors = [{ name = "Jeremy Longshore", email = "jeremy@intentsolutions.io" }]
+
+# NOTE: versions are intentionally loose at scaffold time. The BYOK gateway (E2),
+# agent core (E3), and governance (E5) epics pin them as they land.
+dependencies = [
+    "pydantic-ai>=0.0.14",   # harness — thin model-driven loop (E3)
+    "litellm>=1.40",         # BYOK gateway — any provider (E2)
+    "mcp>=1.0",              # MCP toolsets (E3)
+    "slack-bolt>=1.18",      # Slack ingress for dogfooding (E3)
+    "intent-eval-core~=0.8", # IEP attestation kernel — governance (E5)
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "pytest-asyncio>=0.23",
+    "ruff>=0.5",
+    "mypy>=1.10",
+]
+# Signing edge (E6) — kept optional so the core install stays light.
+signing = [
+    "sigstore>=3.0",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["core*", "tools*", "knowledge*", "surfaces*"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.pytest.ini_options]
+testpaths = ["eval", "tests"]
+markers = [
+    "eval: model-agnostic golden eval cases (E4)",
+    "parity: cross-provider parity evals (E4)",
+    "integration: needs a live provider key or MCP server",
+]

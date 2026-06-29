@@ -1,0 +1,8 @@
+# SOPS + age config (epic E2). Secrets are committed ENCRYPTED (secrets.env.sops);
+# decrypted to /dev/shm only, never to disk (operating rule P8).
+# Public recipient added under E2 (`sops-init`). Scaffold placeholder.
+creation_rules:
+  - path_regex: \.sops\.(env|ya?ml|json)$
+    # age recipient(s) populated by E2 secret-resolution bead via `sops-init`.
+    # age: age1...
+    encrypted_regex: ".*"

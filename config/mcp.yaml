@@ -1,0 +1,18 @@
+# MCP toolset registry + allowlist (E3). Each server is wired in tools/mcp_registry.py.
+# Tier maps to config/policy.yaml. Scaffold only — transports/commands filled in under E3.
+
+allowlist:
+  - plane            # control plane — issues (read R2 / file R3)
+  - twenty           # CRM (read R2)
+  - umami            # analytics (read R2)
+  - gmail            # mail (read R2 / send R3)
+  - drive            # docs (read R2)
+  - semantic-scholar # research (read R2)
+
+servers:
+  plane:            { tier_read: R2, tier_write: R3 }
+  twenty:           { tier_read: R2 }
+  umami:            { tier_read: R2 }
+  gmail:            { tier_read: R2, tier_write: R3 }
+  drive:            { tier_read: R2 }
+  semantic-scholar: { tier_read: R2 }

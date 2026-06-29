@@ -1,0 +1,32 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  lint-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install
+        run: pip install -e ".[dev]"
+      - name: Lint
+        run: ruff check .
+      - name: Test
+        run: pytest -q
+
+  # The following gates are wired by their epics. Listed here so the required-check
+  # surface is visible from day one (they no-op until their epic lands).
+  #
+  #   eval-gate        (E4)  pytest -m eval        — required on behavior-changing PRs
+  #   parity-gate      (E4)  pytest -m parity      — cross-provider BYOK proof
+  #   planted-key      (E2)  fail build if a key reaches any sink
+  #   cosign-verify    (E6)  gates "signed/attested" language (P7)

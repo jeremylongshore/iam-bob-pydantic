@@ -1,0 +1,16 @@
+# Governance policy (E5). Risk tiers, mandate requirements, approvals.
+# Ported LOGIC from v1 (risk tiers R0–R4), emitted as intent_eval_core GateResultV1
+# predicate bodies via core/governance.py. Deterministic gate-result/v1 only — LLM
+# judge-decisions live elsewhere (P9). Scaffold only.
+
+risk_tiers:
+  R0: { description: "read-only / no external effect", requires_mandate: false, sign: false }
+  R1: { description: "internal write (knowledge index)", requires_mandate: false, sign: false }
+  R2: { description: "external read (MCP query)", requires_mandate: false, sign: false }
+  R3: { description: "external write (file issue, comment)", requires_mandate: true, sign: true }
+  R4: { description: "world-changing (PR/deploy/published answer)", requires_mandate: true, sign: true }
+
+# Tools are assigned a tier by tools/mcp_registry.py + tools/builtin.py.
+# sign:true tiers route through the E6 signing edge (egress only, async).
+defaults:
+  unknown_tool_tier: R3   # fail safe: treat unrecognized tools as needing mandate
