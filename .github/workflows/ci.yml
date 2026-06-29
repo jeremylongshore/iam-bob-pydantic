@@ -20,6 +20,8 @@ jobs:
         run: pip install -e ".[dev]"
       - name: Lint
         run: ruff check .
+      - name: Typecheck
+        run: mypy core tools surfaces
       - name: Test
         run: pytest -q
 
