@@ -10,7 +10,7 @@
 > | [`iam-bob-langgraph`](https://github.com/jeremylongshore/iam-bob-langgraph) | LangGraph | Reserved (not built) |
 > | [`iam-bob-intendant`](https://github.com/jeremylongshore/iam-bob-intendant) | Operational worker (AGP-composed) | Live automation |
 >
-> **Formerly** `jeremylongshore/iam-bob-pydantic` (GitHub redirects).
+> **Formerly** `jeremylongshore/bobs-brain-v2` (GitHub redirects).
 
 
 > **Greenfield successor to [`iam-bob-adk`](https://github.com/jeremylongshore/iam-bob-adk) (V1 ADK runtime).**
