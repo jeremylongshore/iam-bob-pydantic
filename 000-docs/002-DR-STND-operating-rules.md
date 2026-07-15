@@ -1,8 +1,8 @@
-# 002-DR-STND — Operating rules for bobs-brain-v2 (replaces v1 Hard Mode R1–R8)
+# 002-DR-STND — Operating rules for iam-bob-pydantic (replaces v1 Hard Mode R1–R8)
 
 - **Status:** ACTIVE
 - **Type:** Standard (DR-STND)
-- **Replaces:** v1 `iam-bobs-brain` Hard Mode rules R1–R8
+- **Replaces:** v1 `iam-bob-adk` Hard Mode rules R1–R8
 
 v1's R1–R8 encoded a Google-ADK constitution. v2 is provider-neutral and governance-first.
 These are the lean rules. They are deliberately few; the discipline lives in the eval gate

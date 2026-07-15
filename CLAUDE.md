@@ -1,7 +1,11 @@
 # CLAUDE.md
 
-Guidance for Claude Code working in `bobs-brain-v2`. This is the greenfield, BYOK,
-governed successor to `iam-bobs-brain` (v1, frozen).
+Guidance for Claude Code working in `iam-bob-pydantic`. This is the greenfield, BYOK,
+provider-neutral successor to `iam-bob-adk` (v1, frozen).
+
+The repository is currently a scaffold: core runtime entry points raise `NotImplementedError`.
+Do not describe the model loop, provider gateway, governance hook, or signing edge as shipped until
+their implementation epics and gates are complete.
 
 ---
 

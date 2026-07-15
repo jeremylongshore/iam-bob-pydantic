@@ -5,6 +5,11 @@
 - **Type:** Architecture Decision Record (AT-DECR), Document Filing Standard v4.x
 - **Decision owner:** Jeremy Longshore (acting head of board)
 
+> **Naming amendment (2026-07-15):** the repository is now
+> `jeremylongshore/iam-bob-pydantic`; the former `bobs-brain-v2` URL redirects. Original names below
+> are preserved as the contemporaneous decision record. This amendment changes naming only, not the
+> Pydantic AI + LiteLLM architecture decision.
+
 ---
 
 ## Context
@@ -69,4 +74,4 @@ their **"defer it" sequencing caution is preserved as bead notes** (D6), not as 
 
 - Operating rules: `002-DR-STND-operating-rules.md`
 - Kernel: `@intentsolutions/core` (`intent-eval-core`, PyPI)
-- v1: https://github.com/jeremylongshore/iam-bobs-brain
+- v1: https://github.com/jeremylongshore/iam-bob-adk

@@ -1,7 +1,7 @@
 [project]
-name = "bobs-brain-v2"
+name = "iam-bob-pydantic"
 version = "0.1.0"
-description = "BYOK, governed second brain (Bob v2) — Pydantic AI + LiteLLM, zero-Google-default, governed by the IEP attestation kernel."
+description = "Provider-neutral Pydantic AI reference implementation of the Intent Agent Model with BYOK, LiteLLM and MCP."
 readme = "README.md"
 requires-python = ">=3.12"
 license = { text = "Intent Solutions Proprietary" }
