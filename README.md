@@ -1,10 +1,23 @@
-# bobs-brain-v2 — a BYOK, governed second brain (Bob v2)
+# iam-bob-pydantic — Bob runtime on Pydantic AI (Intent Agent Model V2)
 
-> **Greenfield successor to [`iam-bobs-brain`](https://github.com/jeremylongshore/iam-bobs-brain) (v1).**
+> **Intent Agent Model (IAM)** — *not* Identity and Access Management.  
+> Bob is the **reference implementation family** for IAM. These repos are different **runtimes** of the same model, not separate products.
+>
+> | Repo | Runtime | Status |
+> |------|---------|--------|
+> | [`iam-bob-adk`](https://github.com/jeremylongshore/iam-bob-adk) | Google ADK | Historical V1 |
+> | [`iam-bob-pydantic`](https://github.com/jeremylongshore/iam-bob-pydantic) | Pydantic AI + LiteLLM (BYOK, MCP) | Historical V2 |
+> | [`iam-bob-langgraph`](https://github.com/jeremylongshore/iam-bob-langgraph) | LangGraph | Reserved (not built) |
+> | [`iam-bob-intendant`](https://github.com/jeremylongshore/iam-bob-intendant) | Operational worker (AGP-composed) | Live automation |
+>
+> **Formerly** `jeremylongshore/bobs-brain-v2` (GitHub redirects).
+
+
+> **Greenfield successor to [`iam-bob-adk`](https://github.com/jeremylongshore/iam-bob-adk) (V1 ADK runtime).**
 > v1 is frozen as the ADK-era reference artifact. v2 is provider-neutral, BYOK-any-key,
 > zero-Google-by-default, and governed by the Intent Eval Platform attestation kernel.
 
-`bobs-brain-v2` is a thin, model-driven agent ("Bob") that answers in Slack, recalls a
+`iam-bob-pydantic` is a thin, model-driven agent ("Bob") that answers in Slack, recalls a
 provider-neutral knowledge index ("second brain"), and reaches the rest of the Intent
 Solutions ecosystem through MCP tools — with **every world-changing action governed and
 (at the signing edge) cryptographically attested**.
@@ -17,7 +30,7 @@ consumes governance contracts already shipped by [`@intentsolutions/core`](https
 
 ## Why v2 exists (the one-paragraph version)
 
-v1 (`iam-bobs-brain`) is a production-grade **Google ADK + Vertex AI Agent Engine** agent
+v1 (`iam-bob-adk`) is a production-grade **Google ADK + Vertex AI Agent Engine** agent
 department. Its constitution (Hard Mode rules R1/R2/R5) *mandates* ADK, the Vertex runtime,
 and Vertex memory. The dogfooding goal — **"any provider, zero Google by default"** — is
 structurally unsatisfiable in that repo without gutting its constitution and 185 docs. So
@@ -25,7 +38,7 @@ v2 is a clean greenfield build; v1 stays intact as honest evidence of the ADK er
 
 ## What changed from v1
 
-| Axis | v1 (`iam-bobs-brain`) | v2 (`bobs-brain-v2`) |
+| Axis | v1 (`iam-bob-adk`) | v2 (`iam-bob-pydantic`) |
 |---|---|---|
 | Harness | Google ADK | **Pydantic AI** (thin, model-driven loop) |
 | Model access | Vertex / Gemini default | **LiteLLM gateway — BYOK any provider** (Claude, OpenAI, DeepSeek, GLM/Zhipu, local Ollama/vLLM) |
@@ -53,7 +66,7 @@ Slack ──▶ Bob (Pydantic AI agent, one model-driven loop)
 > (Implemented under the BYOK gateway epic — see the program below.)
 
 ```bash
-git clone https://github.com/jeremylongshore/bobs-brain-v2
+git clone https://github.com/jeremylongshore/iam-bob-pydantic
 cd bobs-brain-v2
 python3 -m venv .venv && source .venv/bin/activate
 pip install -e .
