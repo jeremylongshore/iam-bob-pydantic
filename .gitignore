@@ -20,7 +20,7 @@ htmlcov/
 *.key
 !age.pub
 
-# Beads — commit the JSONL export, ignore the live Dolt DB
+# Beads — commit issues.jsonl + config.yaml; ignore the live Dolt DB + machine-local files
 .beads/*.db
 .beads/*.db-shm
 .beads/*.db-wal
@@ -29,9 +29,18 @@ htmlcov/
 .beads/*.sock
 .beads/daemon.*
 .beads/*.pid
+.beads/interactions.jsonl
+.beads/export-state.json
+.beads/last-touched
+.beads/.local_version
 
 # OS / editor
 .DS_Store
 *.swp
 .idea/
 .vscode/
+
+# Beads / Dolt files (added by bd init)
+.dolt/
+*.db
+.beads-credential-key

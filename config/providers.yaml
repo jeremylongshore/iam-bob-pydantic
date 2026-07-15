@@ -1,0 +1,31 @@
+# BYOK provider registry (E2). LiteLLM model strings + the env var that carries the key.
+# Zero provider is privileged; zero Google is required. Select at runtime via env BOB_MODEL
+# (e.g. BOB_MODEL=deepseek/deepseek-chat) or the `default` below.
+#
+# Scaffold only — the factory in core/providers.py consumes this under epic E2.
+
+default: deepseek/deepseek-chat
+
+providers:
+  anthropic:
+    model: anthropic/claude-sonnet-4-6
+    api_key_env: ANTHROPIC_API_KEY
+  openai:
+    model: openai/gpt-4.1
+    api_key_env: OPENAI_API_KEY
+  deepseek:
+    model: deepseek/deepseek-chat
+    api_key_env: DEEPSEEK_API_KEY
+  zhipu:
+    model: zhipu/glm-4-plus
+    api_key_env: ZHIPU_API_KEY
+  ollama:                       # local, no key
+    model: ollama/llama3.1
+    api_base_env: OLLAMA_API_BASE
+  vllm:                         # self-hosted, OpenAI-compatible
+    model: openai/local-model
+    api_base_env: VLLM_API_BASE
+  # google is OPTIONAL and explicitly not the default (P2).
+  google:
+    model: gemini/gemini-2.5-flash
+    api_key_env: GEMINI_API_KEY
