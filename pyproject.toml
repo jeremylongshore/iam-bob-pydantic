@@ -22,8 +22,12 @@ dependencies = [
 dev = [
     "pytest>=8.0",
     "pytest-asyncio>=0.23",
-    "ruff>=0.5",
-    "mypy>=1.10",
+    # Linters are bounded to one minor series on purpose: `ruff>=0.5` floated to a
+    # release that flags unused `noqa` comments and turned main red with no change
+    # in this repo (2026-09). Raise the bounds deliberately, in a PR that fixes
+    # whatever the new series reports.
+    "ruff>=0.16,<0.17",
+    "mypy>=2.3,<2.4",
 ]
 # Signing edge (E6) — kept optional so the core install stays light.
 signing = [

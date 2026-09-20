@@ -24,7 +24,7 @@ def redact_secrets(messages):
     return messages
 
 
-def before_tool_execute(ctx, call):  # noqa: ARG001
+def before_tool_execute(ctx, call):
     """Pydantic AI tool hook: gate a tool call before it runs.
 
     Returns/raises per Pydantic AI's SkipToolExecution contract when policy denies.
