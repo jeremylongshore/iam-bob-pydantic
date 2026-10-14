@@ -1,5 +1,11 @@
 # iam-bob-pydantic — provider-neutral Pydantic AI reference implementation of the Intent Agent Model
 
+<!-- intent-select-partner:start -->
+<p><a href="https://intentsolutions.io/"><img src="https://raw.githubusercontent.com/intent-solutions-io/.github/b82af5d3e7951d85e39ea9e65cc24ee8278722a7/assets/brand/claude-select-partner.svg" alt="Intent Solutions: Claude Partner Network Select Services Partner" width="300" height="95" /></a></p>
+
+Intent Solutions is a Claude Partner Network Select Services Partner.
+<!-- intent-select-partner:end -->
+
 > **Intent Agent Model (IAM)** — *not* Identity and Access Management.  
 > Bob is the **reference implementation family** for IAM. These repos are different **runtimes** of the same model, not separate products.
 >
